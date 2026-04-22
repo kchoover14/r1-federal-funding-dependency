@@ -8,7 +8,7 @@
 
 <meta name="author" content="Kara C. Hoover">
 
-<title>Federal Funding Dependency at R1 Research Universities Has Declined Steadily Since the 1970s</title>
+<title>Federal Funding of R1 University Research Has Declined for Fifty Years – and Current Cuts Risk Accelerating the Trend</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -71,14 +71,12 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Federal Funding Dependency at R1 Research Universities Has Declined Steadily Since the 1970s</h1>
-<p class="subtitle lead">A half-century of HERD survey data reveals structural vulnerability in the U.S. research enterprise</p>
+<h1 class="title">Federal Funding of R1 University Research Has Declined for Fifty Years – and Current Cuts Risk Accelerating the Trend</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">Higher Education</div>
-    <div class="quarto-category">Research Policy</div>
-    <div class="quarto-category">Federal Funding</div>
-    <div class="quarto-category">Time Series</div>
-    <div class="quarto-category">Geospatial</div>
+    <div class="quarto-category">R1 Federal Funding Trends</div>
+    <div class="quarto-category">Declining Federal Funds</div>
+    <div class="quarto-category">Time Series Analysis</div>
+    <div class="quarto-category">Geospatial Analysis</div>
   </div>
   </div>
 
@@ -116,8 +114,8 @@ ul.task-list li input[type="checkbox"] {
 <p><strong>Significance:</strong> The map tells a story that a single number cannot: federal dependency is not uniform across states, and the institutions most exposed to federal cuts are concentrated in states whose congressional delegations have the most to lose. This analysis provides both the longitudinal context and the geographic specificity that policymakers and institutional leaders need to understand what is at stake.</p>
 <p><strong>Key Findings</strong></p>
 <ul>
-<li>Federal funding accounted for approximately 75% of R1 R&amp;D expenditures in the mid-1970s, declining to 55% by 2024 — a structural shift that unfolded across five decades regardless of Carnegie classification era.</li>
-<li>A linear model confirms a statistically significant decline of approximately 0.004 percentage points per year (p &lt; 0.001, R² = 0.81); Carnegie classification cycles add no explanatory power beyond year.</li>
+<li>Federal funding accounted for approximately 75% of R1 R&amp;D expenditures in the mid-1970s, declining to 55% by 2024 — a structural shift that unfolded across five decades regardless of Carnegie classification era. These figures are in nominal terms; adjusting for inflation would show an even steeper decline in federal purchasing power for R1 research.</li>
+<li>A linear model confirms a statistically significant decline of approximately 0.004 percentage points per year (p &lt; 0.001, R² = 0.81), meaning year alone explains 81% of the variance in federal dependency — Carnegie classification cycles add no explanatory power beyond year.</li>
 <li>An ARIMA(1,1,1) forecast projects federal dependency stabilizing near 55% through 2034 under historical trends, but the lower bound of the 95% confidence interval reaches 47% — consistent with scenarios involving sustained federal funding cuts.</li>
 <li>State-level dependency varies substantially; states with a single dominant R1 institution are most exposed to federal funding volatility.</li>
 <li>The animated choropleth map reveals geographic concentration of high-dependency states, enabling institution- and district-level interpretation.</li>
@@ -144,23 +142,354 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="research-answers">Research Answers</h2>
 <section id="national-trend-in-federal-dependency" class="level3">
 <h3 class="anchored" data-anchor-id="national-trend-in-federal-dependency">National Trend in Federal Dependency</h3>
-<p>Federal funding has declined as a share of total R1 R&amp;D expenditure since the 1970s, falling from roughly 75% to 55% over five decades. The decline is not explained by Carnegie classification cycles — the long-run downward trend is consistent across every era of the classification system, reflecting a structural shift in how R1 institutions fund research rather than responses to any particular policy change.</p>
+<p>Federal funding has declined as a share of total R1 R&amp;D expenditure since the 1970s, falling from roughly 75% to 55% over five decades. A linear model confirms the decline is statistically significant — approximately 0.004 percentage points per year (p &lt; 0.001, R² = 0.81) — meaning year alone explains 81% of the variance in federal dependency. The decline is not explained by Carnegie classification cycles — the long-run downward trend is consistent across every era of the classification system, reflecting a structural shift in how R1 institutions fund research rather than responses to any particular policy change.</p>
 <p><strong>Figure 1. Federal share of R&amp;D expenditure at R1 universities, 1974–2024, with ARIMA(1,1,1) forecast through 2034. Shaded regions show 80% and 95% confidence intervals.</strong></p>
-<p><img src="outputs/federal-dependency-forecast.png" class="img-fluid"></p>
-<p><strong>Interpretation:</strong> The historical series shows a clear long-run decline punctuated by short-term fluctuations — most notably a temporary recovery around 2004–2006 and a sharp drop following 2010 as ARRA stimulus funds expired. The forecast projects stabilization near 55% under historical trends, but the wide confidence interval reflects genuine uncertainty: the lower bound of the 95% interval reaches approximately 47%, which is consistent with scenarios involving sustained federal cuts of the magnitude currently being implemented. The flat central forecast is not reassurance — it is a baseline that assumes no structural break. The 2025 cuts are precisely such a break.</p>
+<p><img src="federal-dependency-forecast.png" class="img-fluid"></p>
+<p><strong>Interpretation:</strong> The historical series shows a clear long-run decline punctuated by short-term fluctuations — most notably a temporary recovery around 2004–2006 and a sharp drop following 2010 as ARRA stimulus funds expired. These figures are in nominal terms; adjusting for inflation would show an even steeper decline in the real purchasing power of federal research dollars at R1 institutions. The forecast projects stabilization near 55% under historical trends, but the wide confidence interval reflects genuine uncertainty: the lower bound of the 95% interval reaches approximately 47%, which is consistent with scenarios involving sustained federal cuts of the magnitude currently being implemented. The flat central forecast is not reassurance — it is a baseline that assumes no structural break. The 2025 cuts are precisely such a break.</p>
 </section>
 <section id="geographic-distribution-of-federal-dependency" class="level3">
 <h3 class="anchored" data-anchor-id="geographic-distribution-of-federal-dependency">Geographic Distribution of Federal Dependency</h3>
 <p>Federal dependency is not uniform across states. The animated map shows each state’s federal share of R1 R&amp;D expenditure relative to the national average in each year, classified into five natural groups using Jenks breaks on standardized scores.</p>
 <p><strong>Figure 2. Animated choropleth map of federal R&amp;D dependency at R1 universities by state, 1974–2024. Darker colors indicate higher federal dependency relative to the national average. Grey indicates no R1 institution in the HERD data for that year.</strong></p>
-<p><img src="outputs/federal-dependency-map.gif" class="img-fluid"></p>
+<p><img src="federal-dependency-map.gif" class="img-fluid"></p>
 <p><strong>Interpretation:</strong> High-dependency states — those consistently above the national average — tend to be home to institutions with large federal research portfolios concentrated in defense, health, and basic science. Low-dependency states often have strong industry partnerships or large institutional research funds that offset federal reliance. The temporal animation reveals that the geographic pattern of dependency has shifted over time, with some states moving from below-average to above-average dependency as their R1 institutions grew their federal portfolios faster than other revenue sources.</p>
 </section>
 <section id="benchmarking-federal-dependency-across-states-and-carnegie-cycles" class="level3">
 <h3 class="anchored" data-anchor-id="benchmarking-federal-dependency-across-states-and-carnegie-cycles">Benchmarking Federal Dependency Across States and Carnegie Cycles</h3>
-<p>The table below shows mean federal share of R1 R&amp;D expenditure by state and Carnegie classification cycle. States are included only where R1 data are available for that cycle.</p>
-<p><strong>Table 1. Mean federal share of R1 R&amp;D expenditure by state and Carnegie cycle. Highest and lowest dependency states by most recent cycle are highlighted.</strong></p>
-<!-- Insert benchmark_table here as a markdown table -->
+<p>Four tables characterize federal dependency patterns across states and Carnegie cycles.</p>
+<p><strong>Table 1. Federal dependency benchmark metrics by Jenks classification. Values represent state-year combinations across the full time series.</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Dependency Class</th>
+<th>N (State-Years)</th>
+<th>Mean</th>
+<th>Min</th>
+<th>Max</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Low</td>
+<td>116</td>
+<td>37%</td>
+<td>21%</td>
+<td>53%</td>
+</tr>
+<tr class="even">
+<td>Below Average</td>
+<td>414</td>
+<td>48%</td>
+<td>34%</td>
+<td>65%</td>
+</tr>
+<tr class="odd">
+<td>Average</td>
+<td>432</td>
+<td>59%</td>
+<td>46%</td>
+<td>76%</td>
+</tr>
+<tr class="even">
+<td>Above Average</td>
+<td>386</td>
+<td>69%</td>
+<td>56%</td>
+<td>88%</td>
+</tr>
+<tr class="odd">
+<td>High</td>
+<td>254</td>
+<td>79%</td>
+<td>63%</td>
+<td>95%</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Table 2. Highest and lowest federal dependency states by 2021 Carnegie cycle. Values are mean federal share of total R1 R&amp;D expenditure per cycle. – indicates no R1 institution in HERD data for that cycle.</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 9%">
+<col style="width: 7%">
+<col style="width: 7%">
+<col style="width: 7%">
+<col style="width: 7%">
+<col style="width: 7%">
+<col style="width: 7%">
+<col style="width: 7%">
+<col style="width: 7%">
+<col style="width: 7%">
+<col style="width: 7%">
+<col style="width: 12%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>State</th>
+<th>1973</th>
+<th>1976</th>
+<th>1987</th>
+<th>1994</th>
+<th>2000</th>
+<th>2005</th>
+<th>2010</th>
+<th>2015</th>
+<th>2018</th>
+<th>2021</th>
+<th>Category</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>CO</td>
+<td>79%</td>
+<td>74%</td>
+<td>74%</td>
+<td>68%</td>
+<td>78%</td>
+<td>79%</td>
+<td>77%</td>
+<td>76%</td>
+<td>71%</td>
+<td>75%</td>
+<td>High</td>
+</tr>
+<tr class="even">
+<td>OH</td>
+<td>65%</td>
+<td>62%</td>
+<td>56%</td>
+<td>57%</td>
+<td>58%</td>
+<td>60%</td>
+<td>81%</td>
+<td>79%</td>
+<td>81%</td>
+<td>78%</td>
+<td>High</td>
+</tr>
+<tr class="odd">
+<td>RI</td>
+<td>–</td>
+<td>–</td>
+<td>–</td>
+<td>62%</td>
+<td>63%</td>
+<td>62%</td>
+<td>37%</td>
+<td>49%</td>
+<td>69%</td>
+<td>69%</td>
+<td>High</td>
+</tr>
+<tr class="even">
+<td>AR</td>
+<td>–</td>
+<td>–</td>
+<td>–</td>
+<td>–</td>
+<td>–</td>
+<td>–</td>
+<td>27%</td>
+<td>28%</td>
+<td>29%</td>
+<td>36%</td>
+<td>Low</td>
+</tr>
+<tr class="odd">
+<td>ND</td>
+<td>–</td>
+<td>–</td>
+<td>–</td>
+<td>–</td>
+<td>–</td>
+<td>–</td>
+<td>33%</td>
+<td>–</td>
+<td>–</td>
+<td>27%</td>
+<td>Low</td>
+</tr>
+<tr class="even">
+<td>NE</td>
+<td>–</td>
+<td>–</td>
+<td>–</td>
+<td>–</td>
+<td>–</td>
+<td>36%</td>
+<td>41%</td>
+<td>33%</td>
+<td>34%</td>
+<td>33%</td>
+<td>Low</td>
+</tr>
+</tbody>
+</table>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Table 3. Most sensitive states (highest SD), 1974–2024.</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>State</th>
+<th>Mean</th>
+<th>SD</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>IA</td>
+<td>57%</td>
+<td>16%</td>
+</tr>
+<tr class="even">
+<td>TN</td>
+<td>69%</td>
+<td>15%</td>
+</tr>
+<tr class="odd">
+<td>NC</td>
+<td>65%</td>
+<td>14%</td>
+</tr>
+<tr class="even">
+<td>WA</td>
+<td>71%</td>
+<td>14%</td>
+</tr>
+<tr class="odd">
+<td>CA</td>
+<td>75%</td>
+<td>13%</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Table 4. Least sensitive states (lowest SD), 1974–2024.</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>State</th>
+<th>Mean</th>
+<th>SD</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>VT</td>
+<td>66%</td>
+<td>2%</td>
+</tr>
+<tr class="even">
+<td>NM</td>
+<td>69%</td>
+<td>3%</td>
+</tr>
+<tr class="odd">
+<td>ME</td>
+<td>48%</td>
+<td>3%</td>
+</tr>
+<tr class="even">
+<td>NV</td>
+<td>40%</td>
+<td>3%</td>
+</tr>
+<tr class="odd">
+<td>MN</td>
+<td>55%</td>
+<td>3%</td>
+</tr>
+</tbody>
+</table>
+</div><div class="column" style="width:50%;">
+<p><strong>Table 5. Biggest swings in federal dependency (highest range), 1974–2024.</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>State</th>
+<th>Min</th>
+<th>Max</th>
+<th>Range</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>IA</td>
+<td>33%</td>
+<td>90%</td>
+<td>57%</td>
+</tr>
+<tr class="even">
+<td>NC</td>
+<td>43%</td>
+<td>95%</td>
+<td>52%</td>
+</tr>
+<tr class="odd">
+<td>TN</td>
+<td>41%</td>
+<td>89%</td>
+<td>48%</td>
+</tr>
+<tr class="even">
+<td>WA</td>
+<td>40%</td>
+<td>87%</td>
+<td>46%</td>
+</tr>
+<tr class="odd">
+<td>CA</td>
+<td>51%</td>
+<td>91%</td>
+<td>40%</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Table 6. Smallest swings in federal dependency (lowest range), 1974–2024.</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>State</th>
+<th>Min</th>
+<th>Max</th>
+<th>Range</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>VT</td>
+<td>63%</td>
+<td>69%</td>
+<td>6%</td>
+</tr>
+<tr class="even">
+<td>WY</td>
+<td>38%</td>
+<td>48%</td>
+<td>10%</td>
+</tr>
+<tr class="odd">
+<td>ME</td>
+<td>44%</td>
+<td>51%</td>
+<td>7%</td>
+</tr>
+<tr class="even">
+<td>NV</td>
+<td>35%</td>
+<td>43%</td>
+<td>8%</td>
+</tr>
+<tr class="odd">
+<td>MN</td>
+<td>49%</td>
+<td>60%</td>
+<td>11%</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
