@@ -99,7 +99,7 @@ p <- ggplot(map_plot_data, aes(x = long, y = lat, group = group, fill = dependen
   geom_polygon(color = "white", linewidth = 0.2) +
   geom_text(data = state_centroids,
             aes(x = long, y = lat, label = state_abbv),
-            inherit.aes = FALSE, size = 3.5, color = "black") +
+            inherit.aes = FALSE, size = 4, color = "black") +
   scale_fill_viridis_d(option = "mako",
                        begin = .7,
                        end = .2,
@@ -110,7 +110,9 @@ p <- ggplot(map_plot_data, aes(x = long, y = lat, group = group, fill = dependen
   coord_fixed(1.3) +
   theme_void() +
   theme(legend.text = element_text(size = 14),
-        legend.title = element_text(size = 14)) +
+        legend.title = element_text(size = 14),
+        plot.title = element_text(size = 18),
+        plot.subtitle = element_text(size = 18)) +
   labs(title = "Federal Share of R&D Expenditure at R1 Universities",
        subtitle = "Year: {current_frame}") +
   transition_manual(herd_year)

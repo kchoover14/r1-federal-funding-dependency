@@ -96,8 +96,8 @@ ggplot() +
               fill = "steelblue", alpha = 0.25) +
   geom_line(data = historical_df, aes(x = year, y = fed_share), color = "black", linewidth = 0.8) +
   geom_line(data = forecast_df, aes(x = year, y = mean), color = "steelblue", linewidth = 0.8) +
-  geom_vline(xintercept = 2024.5, linetype = "dashed", color = "grey40") +
-  annotate("text", x = 2025, y = 0.72, label = "Forecast", hjust = 0, size = 3, color = "grey40") +
+  geom_vline(xintercept = 2024.5, linetype = "dashed", color = "steelblue") +
+  annotate("text", x = 2025, y = 0.72, label = "Forecast", hjust = 0, size = 4, color = "steelblue") +
   scale_x_continuous(breaks = seq(1974, 2034, by = 5), limits = c(1974, 2038)) +
   scale_y_continuous(labels = scales::percent, limits = c(0.47, 0.80)) +
   labs(title = "Federal Share of R&D Expenditure at R1 Universities",
@@ -106,7 +106,10 @@ ggplot() +
        y = "Federal Share of Total R&D",
        caption = "Source: NSF HERD Survey. Forecast: ARIMA(1,1,1).") +
   theme_minimal() +
-  theme(plot.subtitle = element_text(size = 9, color = "grey40"),
+  theme(legend.text = element_text(size = 14),
+        legend.title = element_text(size = 14),
+        plot.title = element_text(size = 16),
+        plot.subtitle = element_text(size = 11, color = "black"),
         plot.margin = margin(10, 40, 10, 10))
 ggsave("outputs/federal-dependency-forecast.png", width = 8, height = 5, dpi = 300)
 
