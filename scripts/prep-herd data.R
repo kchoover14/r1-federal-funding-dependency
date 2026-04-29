@@ -58,7 +58,10 @@ write.csv(herd_raw, 'artifacts/herd-raw.csv', row.names = FALSE)
 
 ############ TRANSFORM DATA
 # explore data for vars
-explore = herd_raw |> distinct(question, row) |> arrange(question, row) |> print(n=350)
+explore = herd_raw |> distinct(question, row) |> arrange(question, row)
+
+#or to console
+herd_raw |> distinct(question, row) |> arrange(question, row) |> print(n=350)
 
 # follow up on these fields after basic analysis done
 # Capital expenditures by area
