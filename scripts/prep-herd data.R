@@ -53,12 +53,10 @@ herd_raw <- do.call(rbind, herd_list)
 
 #save
 write.csv(herd_raw, 'artifacts/herd-raw.csv', row.names = FALSE)
-
+#cannot share file due to size
 
 
 ############ TRANSFORM DATA
-# herd_source = read.csv('artifacts/herd-raw.csv')
-
 # explore data for vars
 explore = herd_raw |> distinct(question, row) |> arrange(question, row) |> print(n=350)
 
@@ -96,10 +94,6 @@ herd_source <- herd_source |>
          herd_name_clean = str_replace_all(herd_name_clean, "&", "and"),
          herd_name_clean = str_replace_all(herd_name_clean, "-", " "))
 
-
-# clean names
-herd_source <- herd_source |>
-  mutate(herd_name_clean = normalize_name(herd_name))
 
 # rename and relocate
 herd_source = herd_source |> relocate(herd_name_clean, .after = herd_name)
@@ -149,7 +143,7 @@ name_check = distinct(herd_source, herd_name_clean)
 write.csv(name_check, 'artifacts/herd-name_check.csv', row.names = FALSE)
 
 #save
-write.csv(herd_source, 'artifacts/herd.csv', row.names = FALSE)
+write.csv(herd_source, 'artifacts/herd-clean.csv', row.names = FALSE)
 
 
 ######################## TIDY
