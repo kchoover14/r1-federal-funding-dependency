@@ -2,7 +2,7 @@
 library(readr) # read zipped folders with csv
 library(dplyr) # data wrangling
 library(readxl) # read excel files
-
+library(stringr) # wrangle strings
 
 ############ DATA SOURCE
 # from ncses
